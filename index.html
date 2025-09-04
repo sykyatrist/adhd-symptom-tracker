@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADHD Symptom Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ADHD Symptom Tracker 📝</h1>
+            <p>Use this tool to log your daily experiences. All data is saved on your device and is not sent anywhere.</p>
+        </header>
+
+        <main>
+            <form id="tracker-form">
+                <h2>Today's Entry</h2>
+                
+                <fieldset>
+                    <legend>Focus & Attention</legend>
+                    <div class="form-group">
+                        <label for="lostFocus">Times I lost focus during a task:</label>
+                        <input type="number" id="lostFocus" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="misplacedItems">Times I misplaced personal items (keys, phone):</label>
+                        <input type="number" id="misplacedItems" min="0" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="zonedOut">Did I 'zone out' in conversations today?</label>
+                        <select id="zonedOut">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                            <option value="n/a">Not Applicable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDifficulty">Difficulty starting/sticking with tasks (1=Easy, 5=Very Hard):</label>
+                        <input type="range" id="taskDifficulty" min="1" max="5" value="3">
+                        <span class="range-value">3</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Organisation & Time Management</legend>
+                    <div class="form-group">
+                        <label for="onTime">Was I on time for commitments today?</label>
+                         <select id="onTime">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="n/a">Not Applicable</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="procrastination">Did I procrastinate on an important task?</label>
+                         <select id="procrastination">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workspaceTidiness">Workspace tidiness (1=Messy, 10=Tidy):</label>
+                        <input type="range" id="workspaceTidiness" min="1" max="10" value="5">
+                        <span class="range-value">5</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Impulsivity & Hyperactivity</legend>
+                    <div class="form-group">
+                        <label for="interrupted">Times I interrupted someone:</label>
+                        <input type="number" id="interrupted" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="impulsivePurchase">Did I make an impulsive purchase?</label>
+                        <select id="impulsivePurchase">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="restless">Felt physically restless (1=Not at all, 5=Very):</label>
+                        <input type="range" id="restless" min="1" max="5" value="3">
+                        <span class="range-value">3</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Emotional & Social</legend>
+                     <div class="form-group">
+                        <label for="mood">Average mood (1=Low, 10=Great):</label>
+                        <input type="range" id="mood" min="1" max="10" value="5">
+                        <span class="range-value">5</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="overwhelmed">Times I felt emotionally overwhelmed:</label>
+                        <input type="number" id="overwhelmed" min="0" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>General Well-being</legend>
+                    <div class="form-group">
+                        <label for="sleepHours">Hours of sleep last night:</label>
+                        <input type="number" id="sleepHours" min="0" max="24" step="0.5" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="sleepQuality">Sleep quality (1=Poor, 10=Excellent):</label>
+                        <input type="range" id="sleepQuality" min="1" max="10" value="5">
+                        <span class="range-value">5</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="physicalActivity">Did I do any physical activity?</label>
+                         <select id="physicalActivity">
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Save Entry</button>
+            </form>
+
+            <section id="log-section">
+                <h2>Saved Entries</h2>
+                <div id="action-buttons">
+                    <button id="print-btn">🖨️ Print Log</button>
+                    <button id="clear-btn">🗑️ Clear All Data</button>
+                </div>
+                <div id="log-container">
+                    <p>Your saved entries will appear here.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>This is a private tool. All data is stored locally in your browser.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
